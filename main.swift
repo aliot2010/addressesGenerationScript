@@ -18,22 +18,21 @@ func generateEng(inputArray:Array<String>){
     let firstName = ["Azog","Balcmeg","Boldog","Bolg","Golfimbul","Gorbag","Gorgol","Grishnákh","Lagduf","Lug","Lugdush","Mauhúr","Muzgash","Orcobal","Othrod","Radbug","Shagrat","Snaga","Ufthak","Uglúk","Aiden","Jackson","Mason","Liam","Jacob","Jayden","Ethan","Noah","Lucas","Logan","Caleb","Caden","Jack","Ryan","Connor","Michael","Elijah","Brayden","Benjamin","Nicholas","Alexander","William","Matthew","James","Landon","Nathan","Dylan","Evan","Luke","Andrew","Gabriel","Gavin","Joshua","Owen","Danil","Carter","Tyler","Cameron","Christian","Wyatt","Henry","Eli","Joseph","Max","Isaac","Samuel","Anthony","Grayson","Zachary","David","Christopher","Jhn","Isaiah","Levi","Jonathan","Oliver","Chase","Cooper","Tristan","Colton","Austin","Colin","Charlie","Dominic","Parker","Hunter","Thomas","Alex","Ia","Jordan","Cole","Julian","Aaron","Carson","Miles","Blake","Brody","Adam","Sebastian","Adrian","Nolan","Sean","Riley","Bentley","Xavier","Hayden","Jeemiah","Jason","Jake","Asher","Micah","Jace","Brandon","Josiah","Hudson","Nathaniel","Bryson","Ryder","Justin","Bryce","Sophia","Emma","Isabella","Oliia","Ava","Lily","Chloe","Madison","Emily","Abigail","Addison","Mia","Madelyn","Ella","Hailey","Kaylee","Avery","Kaitlyn","Riley","Aubrey","Brooklyn","Peyton","Layla","Hannah","Charlotte","Bella","Natalie","Sarah","Grace","Amelia","Kylie","Arianna","Anna","Elizabeth","Sophie","Claire","Lila","Aaliya","Gabriella","Elise","Lillian","Samantha","Makayla","Audrey","Alyssa","Ellie","Alexis","Isabelle","Savannah","Evelyn","Leah","Keira","Allison","Maya","Lucy","Sydney","Taylor","Molly","Lauren","Harper","Scarlett","Brianna","Victoria","Liliana","Aria","Kayla","Annabelle","Gianna","Kennedy","Stella","eagan","Julia","Bailey","Alexandra","Jordyn","Nora","Carolin","Mackenzie","Jasmine","Jocelyn","Kendall","Morgan","Nevaeh","Maria","Eva","Juliana","Abby","Alexa","Summer","Booke","Penelope","Violet","Kate","Hadley","Ashlyn","Sadie","Paige","Katherine","Sienna","Piper"]
     let secondName=["Biron" , "Bisaga" , "Bisbee" , "Biscay" , "Bisema" , "Bishai" , "Bisho" , "Bishop" , "Bisi" , "Bismarck" , "Bissen" , "Bissex" , "Bisson" , "Bithell" , "Bittanti" , "Bittner" , "Alvarez" , "Alvaro" , "Alves" , "Alway" , "Alwin" , "Aly" , "Amabile" , "Amadeo" , "Amar-Sanchez" , "Amaral" , "Amatangelo" , "Amato" , "Amaturo" , "Ambady" , "Ambler" , "Amboni" , "Ambrose" , "Ambrosone" , "Ameden-Claussen" , "Ameer" , "Amenta" , "Barbieri" , "Barbini" , "Barbosa" , "Barbour" , "Barboza" , "Barcaroli" , "Barchard" , "Carder" , "Cardin" , "Cardoza" , "Cardozo" , "Cardy" , "Careghini" , "Carella" , "Carey" , "Cariani" , "Carini" , "Carleton" , "Carli" , "Carlier" , "Carlin" , "Carlisle" , "Carlli" , "Carlos" , "Carls" , "Carlson" , "Carlson" , "Young" , "Carlstein" , "Carlton" , "Carlucci" , "Carlyle" , "Carman" , "Dilwali" , "Dilworth" , "Dimare" , "Dimopoulos" , "Ding" , "Dingman" , "Dini" , "Dininny" , "Dinklage" , "Dinning" , "Diny" , "Dionne" , "Dionysius" , "Dipasquale" , "Dipietro" , "Dipillo" , "Dippel" , "Dirksen" , "Disalvo" , "Disessa" , "Dishington" , "Disraeli" , "Dissanayake" , "Distaso" , "Distefano" , "Distel" , "Ditmars" , "Divins" , "Divola" , "Dix" , "Dixon","Nunoshiba" , "Nuzum" , "Nygaard" ,  "Oatis-Skinner" , "Oberlander" , "Odette", "Willkie" , "Willner" , "Wills" , "Wilmarth" , "Wilmoth" , "Winans" , "Winsten" , "Wiske" , "Wittgenstein" , "Wodarczak" , "Wodtke" , "Wonder" , "Woodill" , "Woog" , "Wooster" , "Wooten" , "Workman" , "Worrell" , "Wrinn" , "Wulf" , "Xu" , "Yannatos" , "Yaqub" , "Yarchuk" , "Yarmak" , "Yates" , "Yazbeck" , "Yeaple" , "Yi" , "Yorgey" , "Yorke" , "Youk-See" , "Yuan" , "Yutang" , "Zachary" , "Zagaeski" , "Zahedi"]
 
-    for i in 1...Int(len!){
+    for _ in 1...Int(len!){
         var fullAdress = itemGenerator(array:city) + " " + itemGenerator(array:street)
             fullAdress+="-"+String(1+arc4random()%99)
             fullAdress+=" "+String(100000+arc4random()%999999)
             fullAdress+=(" 1-" + String(100+arc4random()%900))
             fullAdress+="-"+String(100+arc4random()%900)
             fullAdress+="-"+String(10000+arc4random()%90000)
-        fullAdress+=(" " + itemGenerator(array:firstName))//firstName[Int(arc4random()%(UInt32(firstName.count)))]
+        fullAdress+=(" " + itemGenerator(array:firstName))
         if arc4random()%10<5{
-            fullAdress+=(" " + itemGenerator(array:firstName))// firstName[Int(arc4random()%(UInt32(firstName.count)))]
+            fullAdress+=(" " + itemGenerator(array:firstName))
         }
         if arc4random()%50<2{
-            fullAdress+=(" " + itemGenerator(array:firstName))//firstName[Int(arc4random()%(UInt32(firstName.count)))]
-        }
+            fullAdress+=(" " + itemGenerator(array:firstName))        }
         
-            fullAdress+=" "+secondName[Int(arc4random()%(UInt32(secondName.count)))]
+        fullAdress+=" " + itemGenerator(array:secondName)//secondName[Int(arc4random()%(UInt32(secondName.count)))]
         //+"-"+ Sc+"-"+String(arc4random()%10000))
         dump(fullAdress)
     
@@ -87,7 +86,12 @@ func generatePreStreet()->String{
         return " ул."
     }
 }
-
+func generateRusPhone() -> String {
+    var fullAdress=" "
+    fullAdress=(" 8-" + String(100+arc4random()%900))
+    fullAdress+="-"+String(100+arc4random()%900)
+    fullAdress+="-"+String(10000+arc4random()%90000)
+}
 func generateRus(inputArray:Array<String>){
    
     let len = Int(inputArray[2])
@@ -99,6 +103,7 @@ func generateRus(inputArray:Array<String>){
         fullAdress+=generatePreStreet()
         fullAdress+=generateRusStreet()
         fullAdress+="-" + String(1+arc4random()%99)
+        fullAdress+=" " + generateRusPhone
         
         dump(fullAdress)
     }
