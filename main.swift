@@ -8,12 +8,46 @@
 
 import Foundation
 
+
+func createMistaces(inputString:String, number:Double)->String {
+    var str=inputString
+    for _ in 1...Int(number){
+    let index = str.index(str.startIndex, offsetBy: Int(arc4random()%UInt32(str.characters.count)))
+    //str[index] = "d"
+    if (arc4random()%10<=5){
+        str.insert(Character(UnicodeScalar(Int(arc4random()%UInt32(256)))!), at: index)
+    } else {
+        str.remove(at: index)
+    }
+
+    }
+
+    return str
+}
+
+func createMistace(inputString:String, number:Double)->String {
+    var str=inputString
+    if (arc4random()%100<=UInt32(number*100)){
+            let index = str.index(str.startIndex, offsetBy: Int(arc4random()%UInt32(str.characters.count)))
+//str[index] = "d"
+        if (arc4random()%10<=5){
+            str.insert(Character(UnicodeScalar(Int(arc4random()%UInt32(256)))!), at: index)
+        } else {
+            str.remove(at: index)
+        }
+    
+    }
+
+        return str
+    }
+
+
 func mistakesGenerator (inputString:String, number:Double ) ->String  {
     var inputStr=inputString
     if(number>=1){
-        inputStr.insert(), at:inputString.count)
+        inputStr=createMistaces(inputString:inputStr, number:number)
     }else if(number>0 && number < 1 ){
-        
+        inputStr=createMistace(inputString:inputStr, number:number)
     }
     
     
@@ -33,11 +67,11 @@ func generateEng(inputArray:Array<String>){
 
     for _ in 1...Int(len!){
         var fullAdress = itemGenerator(array:city) + " " + itemGenerator(array:street)
-            fullAdress+="-"+String(1+arc4random()%99)
-            fullAdress+=" "+String(100000+arc4random()%999999)
-            fullAdress+=(" 1-" + String(100+arc4random()%900))
-            fullAdress+="-"+String(100+arc4random()%900)
-            fullAdress+="-"+String(10000+arc4random()%90000)
+        fullAdress+="-"+String(1+arc4random()%99)
+        fullAdress+=" "+String(100000+arc4random()%999999)
+        fullAdress+=(" 1-" + String(100+arc4random()%900))
+        fullAdress+="-"+String(100+arc4random()%900)
+        fullAdress+="-"+String(10000+arc4random()%90000)
         fullAdress+=(" " + itemGenerator(array:firstName))
         if arc4random()%10<5{
             fullAdress+=(" " + itemGenerator(array:firstName))
@@ -47,11 +81,12 @@ func generateEng(inputArray:Array<String>){
         
         fullAdress+=" " + itemGenerator(array:secondName)//secondName[Int(arc4random()%(UInt32(secondName.count)))]
         //+"-"+ Sc+"-"+String(arc4random()%10000))
-        fullAdress = mistakesGenerator(inputString:fullAdress, number:1)
+        fullAdress = mistakesGenerator(inputString:fullAdress, number:mistakes!)
+        //mistakesGenerator(inputString:fullAdress, number:mistakes!)
         dump(fullAdress)
-    
+        
     }
-
+    
 }
 
 func itemGenerator(array:Array<String>)->String{
@@ -154,7 +189,7 @@ func generateRus(inputArray:Array<String>){
         fullAdress+="-" + String(1+arc4random()%99)
         fullAdress+=" " + generateRusPhone()
         fullAdress+=generateRusName()
-        
+        fullAdress = mistakesGenerator(inputString:fullAdress, number:mistakes!)
         dump(fullAdress)
     }
     
@@ -259,7 +294,7 @@ func generateBy(inputArray:Array<String>){
         fullAdress+="-" + String(1+arc4random()%99)
         fullAdress+=" " + generateByPhone()
         fullAdress+=generateByName()
-        
+        fullAdress = mistakesGenerator(inputString:fullAdress, number:mistakes!)
         dump(fullAdress)
     }
     
