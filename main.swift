@@ -68,7 +68,7 @@ func generateEng(inputArray:Array<String>){
     for _ in 1...Int(len!){
         var fullAdress = itemGenerator(array:city) + " " + itemGenerator(array:street)
         fullAdress+="-"+String(1+arc4random()%99)
-        fullAdress+=" "+String(100000+arc4random()%999999)
+        //fullAdress+=" "+String(100000+arc4random()%999999)
         fullAdress+=(" 1-" + String(100+arc4random()%900))
         fullAdress+="-"+String(100+arc4random()%900)
         fullAdress+="-"+String(10000+arc4random()%90000)
@@ -307,15 +307,15 @@ func generateBy(inputArray:Array<String>){
 
 func generate(){
     
-     if(inputArray[1] == "rus"){
+     if(inputArray[1] == "RU"){
         
         generateRus(inputArray:inputArray);
-     }else if(inputArray[1] == "by"){
+     }else if(inputArray[1] == "BY"){
         generateBy(inputArray:inputArray)
-     }else if(inputArray[1] == "eng"){
+     }else if(inputArray[1] == "US"){
         generateEng(inputArray:inputArray)
      }else{
-        print("Input correct lang(rus , by, eng)")
+        print("Input correct lang(RU , BY, US)")
      }
 }
 
